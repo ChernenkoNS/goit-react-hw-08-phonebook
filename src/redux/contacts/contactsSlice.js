@@ -4,7 +4,6 @@ import {
   deleteContactThunk,
   requestContactsThunk,
 } from './contactsOperations';
-// import { addContact, deleteContact, fetchContact } from './operations';
 
 const handlePending = state => {
   state.error = null;
@@ -64,7 +63,9 @@ const contactsSlice = createSlice({
 
       .addCase(deleteContactThunk.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.contacts =state.contacts.filter(contact => contact.id !== action.payload.id);
+        state.contacts = state.contacts.filter(
+          contact => contact.id !== action.payload.id
+        );
         // state.contacts.items.splice(index, 1);
       })
 
@@ -77,5 +78,8 @@ const contactsSlice = createSlice({
 export const selectUserContacts = state => state.contacts.contacts;
 export const selectContactsIsLosding = state => state.contacts.isLoading;
 export const selectContactsError = state => state.contacts.error;
+////////
+export const selectfilter = state => state.contacts.filter;
+///////
 
 export const contactsReducer = contactsSlice.reducer;

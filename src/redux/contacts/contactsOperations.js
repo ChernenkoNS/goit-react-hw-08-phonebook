@@ -7,7 +7,6 @@ export const requestContactsThunk = createAsyncThunk(
     try {
       const { data } = await $instance.get('/contacts');
       console.log('data', data);
-      
 
       return data;
     } catch (error) {
@@ -29,16 +28,15 @@ export const addContactThunk = createAsyncThunk(
   }
 );
 
-
 export const deleteContactThunk = createAsyncThunk(
-    'contact/deleteContact',
-    async (contactId, thunkApi) => {
-      try {
-        const { data } = await $instance.delete(`/contacts/${contactId}` );
-  
-        return data;
-      } catch (error) {
-        return thunkApi.rejectWithValue(error.messaga);
-      }
+  'contact/deleteContact',
+  async (contactId, thunkApi) => {
+    try {
+      const { data } = await $instance.delete(`/contacts/${contactId}`);
+
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.messaga);
     }
-  );
+  }
+);

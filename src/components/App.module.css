@@ -1,5 +1,23 @@
 
+
+header{
+    display: flex;
+    justify-content: center;
+    
+}
+main{
+    display: flex;
+    justify-content: center;
+    height: 150%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: rgb(114, 119, 119);
+}
+
 .container{
     margin-top: 50px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
+
