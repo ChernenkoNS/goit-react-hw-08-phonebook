@@ -18,7 +18,7 @@ const handleRejected = (state, action) => {
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
-    contacts: null,
+    contacts: [],
     isLoading: false,
     error: null,
   },

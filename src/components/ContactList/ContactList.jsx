@@ -8,6 +8,7 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   const contacts = useSelector(selectUserContacts);
+console.log('contacts', contacts);
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContactThunk(contactId));
@@ -22,16 +23,16 @@ export const ContactList = () => {
     setFilterValue(value);
   };
 
-//   const visibleContacts = contacts.filter(contact =>
-//     contact.name.toLowerCase().includes(filterValue.toLowerCase())
-//   );
+  const visibleContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filterValue.toLowerCase())
+  );
 
   return (
     <div>
       {showContacts && <Filter value={filterValue} onChange={changeFilter} />}
       <ul>
         {showContacts &&
-          contacts.map(contact => {
+          visibleContacts.map(contact => {
             return (
               <li key={contact.id}>
                 <h3>Name: {contact.name}</h3>
