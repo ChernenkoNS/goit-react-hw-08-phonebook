@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/57.5765d9d6.chunk.css","mappings":"AACA,sBAGI,sBAAuB,CAFvB,YAAa,CACb,qBAGJ","sources":["components/Filter/Filter.module.css"],"sourcesContent":["\n.filter {\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n\n}"],"names":[],"sourceRoot":""}
